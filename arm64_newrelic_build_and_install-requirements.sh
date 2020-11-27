@@ -37,7 +37,9 @@ sudo apt-get install -y libmariadbclient18
 
 sudo apt-get install libpam0g-dev -y
 
-#PHP 7.4 not needed as ansible installs this withcorrect version numering already
+# PHP 7.4 not needed as ansible installs this with correct/required version numbering already
+# Uncomment correct line if php installation needed
+
 sudo apt-get update
 sudo apt -y install software-properties-common
 #sudo add-apt-repository -y ppa:ondrej/php
@@ -50,6 +52,7 @@ sudo apt-get install -y libsqlite3-dev
 
 git clone https://github.com/newrelic/newrelic-php-agent.git ~/newrelic-php-agent
 
-cd ~/newrelic-php-agent && sudo make agent-install
-
+make && sudo make agent-install
 sudo cp ./bin/daemon /usr/bin/newrelic-daemon
+
+#Do rest by hand for now (ansible)
