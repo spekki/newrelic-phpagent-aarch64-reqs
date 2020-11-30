@@ -45,6 +45,8 @@ sudo apt -y install software-properties-common
 #sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
 
+sudo apt-get install -y postgresql-server-dev-10
+
 #sudo apt-get install -y php7.4
 sudo apt-get install -y libpq-dev
 
