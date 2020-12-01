@@ -9,6 +9,7 @@ sudo snap install go --classic
 
 sudo apt-get autoremove -y
 
+sudo apt-get install -y libbz2-dev
 sudo apt-get install -y libpcre3 libpcre3-dev
 sudo apt-get install -y libcurl4-openssl-dev
 sudo apt-get install -y libedit-dev
