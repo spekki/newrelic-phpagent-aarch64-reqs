@@ -54,7 +54,8 @@ sudo apt-get install -y libpq-dev
 sudo apt-get install -y libsqlite3-dev
 
 git clone https://github.com/newrelic/newrelic-php-agent.git ~/newrelic-php-agent
-
+# build the v1.pb-c.h header file as its not there and causes build to fail (#include v1.pb-c.h fails in nr_span_encoding.c)
+cd ~/newrelic-php-agent/axiom && ../vendor/local/bin/protoc-c v1.proto --c_out=.
 make && sudo make agent-install
 sudo cp ./bin/daemon /usr/bin/newrelic-daemon
 
