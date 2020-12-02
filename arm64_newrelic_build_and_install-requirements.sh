@@ -54,7 +54,8 @@ sudo apt-get install -y libpq-dev
 sudo apt-get install -y libsqlite3-dev
 
 git clone https://github.com/newrelic/newrelic-php-agent.git ~/newrelic-php-agent
-make && sudo make agent-install
+make 
+
 sudo cp ./bin/daemon /usr/bin/newrelic-daemon
 
 #Do rest by hand for now (ansible)
