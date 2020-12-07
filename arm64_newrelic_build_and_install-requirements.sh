@@ -56,6 +56,12 @@ sudo apt-get install -y libsqlite3-dev
 git clone https://github.com/newrelic/newrelic-php-agent.git ~/newrelic-php-agent
 make 
 
+# in case of make error (missing include v1.pb-c.h) axiom needs to be built by hand first, something wrong with $(VENDOR_BASE) variable in Makefile for the axiom
+# cd axiom
+# run protoc command from vendor folder, inside the axiom folder
+# protoc v1.proto --c_out=. 
+# afterwards run make again
+
 sudo cp ./bin/daemon /usr/bin/newrelic-daemon
 
 #Do rest by hand for now (ansible)
